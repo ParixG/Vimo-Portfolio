@@ -1,5 +1,9 @@
+
+'use client';
+
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import { useLanguage } from "@/context/language-context";
 
 const software = [
   {
@@ -25,12 +29,13 @@ const software = [
 ];
 
 export function SoftwareSection() {
+  const { t } = useLanguage();
   return (
     <section id="software" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Tools of Our Trade</h2>
-          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">We use industry-standard software to deliver professional results with precision and creativity.</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">{t('softwareTitle')}</h2>
+          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">{t('softwareSubtitle')}</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {software.map((tool) => (

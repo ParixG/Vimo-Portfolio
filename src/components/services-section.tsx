@@ -1,36 +1,42 @@
+
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clapperboard, Camera, PenTool, Globe } from 'lucide-react';
-
-const services = [
-  {
-    icon: <Clapperboard className="h-10 w-10 text-primary" />,
-    title: "Video Production",
-    description: "High-quality video content that tells your story and engages your audience.",
-  },
-  {
-    icon: <Camera className="h-10 w-10 text-primary" />,
-    title: "Photography",
-    description: "Professional photoshoots for products, events, and brand marketing.",
-  },
-  {
-    icon: <PenTool className="h-10 w-10 text-primary" />,
-    title: "Graphic Design",
-    description: "Creative logos, branding, and marketing materials that make an impact.",
-  },
-  {
-    icon: <Globe className="h-10 w-10 text-primary" />,
-    title: "Website Development",
-    description: "Modern, responsive websites built to perform and convert.",
-  },
-];
+import { useLanguage } from "@/context/language-context";
 
 export function ServicesSection() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: <Clapperboard className="h-10 w-10 text-primary" />,
+      title: t('service1Title'),
+      description: t('service1Desc'),
+    },
+    {
+      icon: <Camera className="h-10 w-10 text-primary" />,
+      title: t('service2Title'),
+      description: t('service2Desc'),
+    },
+    {
+      icon: <PenTool className="h-10 w-10 text-primary" />,
+      title: t('service3Title'),
+      description: t('service3Desc'),
+    },
+    {
+      icon: <Globe className="h-10 w-10 text-primary" />,
+      title: t('service4Title'),
+      description: t('service4Desc'),
+    },
+  ];
+
   return (
     <section id="services" className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Services</h2>
-          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">We offer a complete suite of digital creative services to help your brand stand out and connect with your audience.</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">{t('servicesTitle')}</h2>
+          <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">{t('servicesSubtitle')}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (

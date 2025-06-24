@@ -1,44 +1,10 @@
+
+'use client';
+
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-
-const testimonials = [
-  {
-    name: "Jane Doe",
-    title: "CEO, Innovate Inc.",
-    image: "https://placehold.co/100x100.png",
-    hint: "woman portrait",
-    comment: "Working with Vimo was a game-changer. Their creativity and professionalism exceeded all our expectations.",
-  },
-  {
-    name: "John Smith",
-    title: "Marketing Director, BizCorp",
-    image: "https://placehold.co/100x100.png",
-    hint: "man portrait",
-    comment: "The video they produced for us went viral! The ROI was incredible. Highly recommend their services.",
-  },
-  {
-    name: "Samantha Lee",
-    title: "Founder, Creative Co.",
-    image: "https://placehold.co/100x100.png",
-    hint: "person portrait",
-    comment: "Incredible attention to detail and a fantastic team to collaborate with. They truly understood our vision.",
-  },
-  {
-    name: "Mike Chen",
-    title: "Product Manager, Tech Solutions",
-    image: "https://placehold.co/100x100.png",
-    hint: "professional headshot",
-    comment: "The final website is not only beautiful but also highly functional. Our user engagement has skyrocketed.",
-  },
-  {
-    name: "Emily White",
-    title: "Artist & Designer",
-    image: "https://placehold.co/100x100.png",
-    hint: "designer headshot",
-    comment: "They brought my portfolio to life. I couldn't be happier with the stunning visuals and smooth experience.",
-  },
-];
+import { useLanguage } from "@/context/language-context";
 
 const FiveStars = () => (
   <div className="flex gap-1">
@@ -49,15 +15,55 @@ const FiveStars = () => (
 );
 
 export function TestimonialsSection() {
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      name: "Jane Doe",
+      title: "CEO, Innovate Inc.",
+      image: "https://placehold.co/100x100.png",
+      hint: "woman portrait",
+      comment: t('testimonial1'),
+    },
+    {
+      name: "John Smith",
+      title: "Marketing Director, BizCorp",
+      image: "https://placehold.co/100x100.png",
+      hint: "man portrait",
+      comment: t('testimonial2'),
+    },
+    {
+      name: "Samantha Lee",
+      title: "Founder, Creative Co.",
+      image: "https://placehold.co/100x100.png",
+      hint: "person portrait",
+      comment: t('testimonial3'),
+    },
+    {
+      name: "Mike Chen",
+      title: "Product Manager, Tech Solutions",
+      image: "https://placehold.co/100x100.png",
+      hint: "professional headshot",
+      comment: t('testimonial4'),
+    },
+    {
+      name: "Emily White",
+      title: "Artist & Designer",
+      image: "https://placehold.co/100x100.png",
+      hint: "designer headshot",
+      comment: t('testimonial5'),
+    },
+  ];
+
   const extendedTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section id="testimonials" className="py-20 md:py-28 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">{t('testimonialsTitle')}</h2>
           <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Real stories from satisfied partners who trusted us with their vision.
+            {t('testimonialsSubtitle')}
           </p>
         </div>
       </div>

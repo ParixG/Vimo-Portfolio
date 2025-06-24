@@ -11,38 +11,66 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Globe } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Header() {
+  const { setLanguage, t } = useLanguage();
+
   return (
     <header className="py-4 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto flex justify-between items-center">
         <Logo />
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Contact Us</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Contact Us</DialogTitle>
-              <DialogDescription>
-                Get in touch with us for any inquiries or to start your next project.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="py-4 space-y-4">
-              <div className="flex items-center gap-4">
-                <Mail className="h-5 w-5 text-muted-foreground" />
-                <a href="mailto:contact@vimo.com" className="hover:underline">
-                  contact@vimo.com
-                </a>
+        <div className="flex items-center gap-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Globe className="h-[1.2rem] w-[1.2rem]" />
+                <span className="sr-only">Toggle language</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('tr')}>
+                Türkçe
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">{t('contactUs')}</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>{t('contactUs')}</DialogTitle>
+                <DialogDescription>
+                  {t('contactDescription')}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="py-4 space-y-4">
+                <div className="flex items-center gap-4">
+                  <Mail className="h-5 w-5 text-muted-foreground" />
+                  <a href="mailto:contact@vimo.com" className="hover:underline">
+                    contact@vimo.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Phone className="h-5 w-5 text-muted-foreground" />
+                  <span>(123) 456-7890</span>
+                </div>
               </div>
-              <div className="flex items-center gap-4">
-                <Phone className="h-5 w-5 text-muted-foreground" />
-                <span>(123) 456-7890</span>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
     </header>
   );

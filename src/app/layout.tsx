@@ -1,7 +1,9 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
+import { Providers } from '@/components/providers';
 
 export const metadata: Metadata = {
   title: 'Vimo Portfolio',
@@ -21,7 +23,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className={cn("font-body antialiased min-h-screen bg-background font-sans")}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Toaster />
       </body>
     </html>

@@ -1,4 +1,8 @@
+
+'use client';
+
 import { Instagram, Facebook, Youtube } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 const platforms = [
   {
@@ -31,13 +35,14 @@ const platforms = [
 ];
 
 export function PlatformsSection() {
+  const { t } = useLanguage();
   return (
     <section id="platforms" className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Platforms</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">{t('platformsTitle')}</h2>
           <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-            We leverage the most popular platforms to maximize your brand's reach and engagement.
+            {t('platformsSubtitle')}
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
