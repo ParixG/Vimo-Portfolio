@@ -21,16 +21,6 @@ const software = [
     name: "Adobe After Effects",
     logoUrl: "https://placehold.co/100x100.png",
     hint: "Adobe AfterEffects"
-  },
-  {
-    name: "Figma",
-    logoUrl: "https://placehold.co/100x100.png",
-    hint: "Figma logo"
-  },
-  {
-    name: "DaVinci Resolve",
-    logoUrl: "https://placehold.co/100x100.png",
-    hint: "DaVinci Resolve"
   }
 ];
 

@@ -4,6 +4,8 @@ import { ServicesSection } from '@/components/services-section';
 import { SoftwareSection } from '@/components/software-section';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { PlatformsSection } from '@/components/platforms-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
         </section>
         <ServicesSection />
         <SoftwareSection />
+        <PlatformsSection />
+        <TestimonialsSection />
       </main>
       <Footer />
     </div>
