@@ -8,22 +8,22 @@ import { useLanguage } from "@/context/language-context";
 const software = [
   {
     name: "Adobe Premiere Pro",
-    logoUrl: "https://placehold.co/100x100.png",
+    logoUrl: "/assets/premiere-pro.svg",
     hint: "Adobe PremierePro"
   },
   {
     name: "Adobe Photoshop",
-    logoUrl: "https://placehold.co/100x100.png",
+    logoUrl: "/assets/photoshop.svg",
     hint: "Adobe Photoshop"
   },
   {
     name: "Adobe Illustrator",
-    logoUrl: "https://placehold.co/100x100.png",
+    logoUrl: "/assets/illustrator.svg",
     hint: "Adobe Illustrator"
   },
   {
     name: "Adobe After Effects",
-    logoUrl: "https://placehold.co/100x100.png",
+    logoUrl: "/assets/after-effects.svg",
     hint: "Adobe AfterEffects"
   }
 ];

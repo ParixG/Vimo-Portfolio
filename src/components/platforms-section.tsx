@@ -7,21 +7,21 @@ import { useLanguage } from '@/context/language-context';
 const platforms = [
   {
     name: "Instagram",
-    icon: <Instagram className="h-16 w-16 text-primary" />,
+    icon: <Instagram className="h-12 w-12 text-primary" />,
   },
   {
     name: "Meta",
-    icon: <Facebook className="h-16 w-16 text-primary" />,
+    icon: <Facebook className="h-12 w-12 text-primary" />,
   },
   {
     name: "YouTube",
-    icon: <Youtube className="h-16 w-16 text-primary" />,
+    icon: <Youtube className="h-12 w-12 text-primary" />,
   },
   {
     name: "TikTok",
     icon: (
       <svg
-        className="h-16 w-16 text-primary"
+        className="h-12 w-12 text-primary"
         role="img"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +47,10 @@ export function PlatformsSection() {
         </div>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           {platforms.map((platform) => (
-            <div key={platform.name} className="flex flex-col items-center gap-4 text-center w-24">
-              {platform.icon}
+            <div key={platform.name} className="flex flex-col items-center gap-4 text-center w-32 p-6 bg-background rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="p-4 rounded-full bg-primary/10">
+                {platform.icon}
+              </div>
               <span className="font-semibold text-lg">{platform.name}</span>
             </div>
           ))}
