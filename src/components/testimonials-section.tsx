@@ -68,9 +68,9 @@ export function TestimonialsSection() {
         </div>
       </div>
       <div className="relative w-full">
-        <div className="flex animate-marquee hover:[animation-play-state:paused]">
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:animate-marquee md:hover:[animation-play-state:paused] md:overflow-x-hidden md:snap-none">
           {extendedTestimonials.map((testimonial, index) => (
-            <Card key={index} className="flex-shrink-0 w-80 md:w-96 mx-4 p-6">
+            <Card key={index} className="flex-shrink-0 w-80 md:w-96 mx-4 p-6 snap-center">
               <CardContent className="p-0 flex flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <Image

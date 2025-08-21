@@ -26,8 +26,10 @@ export default function Home() {
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
               {t('heroSubtitle')}
             </p>
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              {t('viewOurWork')} <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+              <a href="https://drive.google.com/drive/folders/1BGyMOJ7syxxt8bpRE1qzHJ5a5Kvsa6p_?usp=sharing" target="_blank" rel="noopener noreferrer">
+                {t('viewOurWork')} <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </section>
