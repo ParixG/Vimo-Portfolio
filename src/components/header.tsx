@@ -60,12 +60,12 @@ export function Header() {
                 <div className="flex items-center gap-4">
                   <Mail className="h-5 w-5 text-muted-foreground" />
                   <a href="mailto:contact@vimo.com" className="hover:underline">
-                    contact@vimo.com
+                    vimoagy@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="h-5 w-5 text-muted-foreground" />
-                  <span>(123) 456-7890</span>
+                  <span>+90 (536) 072-2253</span>
                 </div>
               </div>
             </DialogContent>

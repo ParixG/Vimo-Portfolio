@@ -66,3 +66,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+.hero-banner {
+  background-color: hsl(var(--background));
+  position: relative;
+}
+
+.hero-banner > div {
+  position: relative;
+  z-index: 2;
+}

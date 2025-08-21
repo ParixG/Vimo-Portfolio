@@ -18,7 +18,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <section id="hero" className="py-20 md:py-32">
+        <section id="hero" className="py-20 md:py-32 hero-banner">
           <div className="container mx-auto text-center px-4">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4 font-headline">
               {t('heroTitle')}
