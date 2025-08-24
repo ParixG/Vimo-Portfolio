@@ -19,6 +19,13 @@ export function TestimonialsSection() {
 
   const testimonials = [
     {
+      name: "Necdet ERHAN",
+      title: "Surgen",
+      image: "https://placehold.co/100x100.png",
+      hint: "designer headshot",
+      comment: t('testimonial5'),
+    },
+    {
       name: "Jane Doe",
       title: "CEO, Innovate Inc.",
       image: "https://placehold.co/100x100.png",
@@ -87,7 +94,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
                 <blockquote className="text-foreground italic border-l-4 border-border pl-4">
-                  "{testimonial.comment}"
+                  &quot;{testimonial.comment}&quot;
                 </blockquote>
                 <FiveStars />
               </CardContent>
